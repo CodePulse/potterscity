@@ -1,0 +1,61 @@
+version: '2.1'
+services:
+  apache:
+    image: catchdigital/apache:2.4-1.0.0
+    env_file: .env
+    ports:
+      - "${APACHE_PORT}:8080"
+    depends_on:
+      - php
+    links:
+      - "db:${APP_URL}"
+    environment:
+      APACHE_BACKEND_HOST: ${APACHE_BACKEND_HOST}
+      APACHE_DOCROOT: ${APACHE_DOCROOT}
+      APACHE_PORT: 8080
+    volumes:
+      - ./:/var/www/html:cached
+
+  php:
+    image: catchdigital/php:7.1.9-fpm-ix
+    env_file: .env
+    expose:
+      - 9000
+    links:
+      - db:${APP_URL}
+    volumes:
+      - ./docker/etc/php/config.ini:/usr/local/etc/php/conf.d/x-config.ini:cached
+      - ./.:/var/www/html:cached
+
+  db:
+    image: percona:5.7
+    env_file: ./.env
+    ports:
+      - "${DB_PORT}:3327"
+    volumes:
+       - pc-db:/var/lib/mysql
+       - ./docker/etc/mysql/my.cnf:/etc/mysql/my.cnf:cached
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+
+  memcached:
+    image: memcached:1.5.2-alpine
+
+  solr:
+    image: solr:6-alpine
+    volumes:
+      - pc-solr:/opt/solr/server/solr/pc_index:cached
+      - ./docroot/modules/contrib/search_api_solr/solr-conf/6.x:/solr-conf/conf:cached
+    ports:
+      - "${SOLR_PORT}:8983"
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - pc_index
+      - /solr-conf
+
+volumes:
+  pc-solr:
+  pc-db:

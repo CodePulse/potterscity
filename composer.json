@@ -1,0 +1,140 @@
+{
+    "name": "drupal/drupal",
+    "description": "Docker + drupal composer stack",
+    "type": "project",
+    "license": "GNU GPLv3",
+    "minimum-stability": "dev",
+    "config": {
+        "platorm": {
+            "php": "7.1"
+        },
+        "sort-packages": true
+    },
+    "authors": [
+        {
+            "name": "Ben Lamptey",
+            "email": "ben@codepulse.co.uk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "~1.0",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/acquia_connector": "^1.14",
+        "drupal/address": "^1.3",
+        "drupal/admin_toolbar": "^1.20",
+        "drupal/advagg": "^3.3",
+        "drupal/autologout": "^1.0",
+        "drupal/commerce": "^2.7",
+        "drupal/config_ignore": "^2.1",
+        "drupal/config_installer": "^1.5",
+        "drupal/config_split": "^1.2",
+        "drupal/console": "~1.0",
+        "drupal/core": "^8.5",
+        "drupal/devel": "^1.2",
+        "drupal/field_group": "^1.0",
+        "drupal/google_tag": "^1.0",
+        "drupal/memcache": "^2.0@alpha",
+        "drupal/metatag": "^1.3",
+        "drupal/paragraphs": "^1.2",
+        "drupal/pathauto": "^1.1",
+        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/redirect": "^1.1",
+        "drupal/seckit": "^1.0@alpha",
+        "drupal/xmlsitemap": "^1.0@alpha",
+        "drush/drush": "^9.1.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
+    },
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "~8.5.1"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "cd etc/nginx/ssl && openssl req -x509 -newkey rsa:4086 -subj \"/C=XX/ST=XXXX/L=XXXX/O=XXXX/CN=vm.localhost\" -keyout \"key.pem\" -out \"cert.pem\" -days 3650 -nodes -sha256"
+        ],
+        "post-create-project-cmd": [
+            "php -r \"file_exists('docroot/sites/default/settings.local.php') || copy('example.settings.local.php', 'docoro/sites/default/settings.local.php');\"",
+            "./vendor/bin/drush eval \"echo Drupal\\Component\\Utility\\Crypt::randomBytesBase64(55)\" > salt.txt"
+        ],
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "docroot/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ]
+        },
+        "patches": [],
+        "enable-patching": true,
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "merge-plugin": {
+            "require": [
+                "blt/composer.required.json"
+            ],
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true,
+            "replace": false,
+            "ignore-duplicates": true
+        }
+    }
+}

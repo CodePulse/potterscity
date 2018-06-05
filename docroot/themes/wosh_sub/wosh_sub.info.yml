@@ -1,0 +1,34 @@
+name: Wosh Sub Theme
+type: theme
+description: 'Wosh Drupal 8 Sub Theme. Developed & Designed by <a href=http://www.hugestem.com>HugeStem</a>'
+package: core
+version: '8.x-1.0'
+core: '8.x'
+
+base theme: wosh
+
+#Libraries
+libraries:
+  - wosh_sub/global-styling
+
+#Regions
+regions:
+  branding: 'Branding'
+  primary_menu: 'Primary Menu'
+  user_account: 'User Account'
+  search: 'Search'
+  cart: 'Cart'
+  slider: 'Slider'
+  page_title: 'Page Title'
+  breadcrumb: 'Breadcrumb'
+  content_wide_top: 'Content Wide Top'
+  content: 'Content'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  content_wide: 'Content Wide Bottom'
+  footer_first: 'Footer First Widget'
+  footer_second: 'Footer Second Widget'
+  footer_third: 'Footer Third Widget'
+  footer_forth: 'Footer Forth Widget'
+  footer: 'Footer'
+  auto_hidden_block: 'Auto hidden blocks'
