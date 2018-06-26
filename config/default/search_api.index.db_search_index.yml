@@ -1,0 +1,83 @@
+uuid: 40bee1ea-658d-4e29-8c96-3a7b9a5079f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_product_category
+    - field.storage.commerce_product.field_product_brand
+    - field.storage.commerce_product.variations
+    - search_api.server.db_search
+  module:
+    - commerce_product
+    - search_api
+id: db_search_index
+name: 'DB Search Index'
+description: ''
+read_only: false
+field_settings:
+  field_product_category:
+    label: 'Product Category'
+    datasource_id: 'entity:commerce_product'
+    property_path: field_product_category
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_product_category
+  field_product_brand:
+    label: 'Product Brand'
+    datasource_id: 'entity:commerce_product'
+    property_path: field_product_brand
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_product_brand
+  created:
+    label: 'Variations » Product variation » Created'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'variations:entity:created'
+    type: date
+    dependencies:
+      config:
+        - field.storage.commerce_product.variations
+      module:
+        - commerce_product
+  title:
+    label: 'Variations » Product variation » Product » Product » Title'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'variations:entity:product_id:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product.variations
+      module:
+        - commerce_product
+        - commerce_product
+  number:
+    label: 'Variations » Product variation » Price » Number'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'variations:entity:price:number'
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.commerce_product.variations
+      module:
+        - commerce_product
+datasource_settings:
+  'entity:commerce_product':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: db_search

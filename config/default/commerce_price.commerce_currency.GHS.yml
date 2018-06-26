@@ -1,0 +1,9 @@
+uuid: aff5cab5-eb40-4600-9e2f-38c3956aabcc
+langcode: en
+status: true
+dependencies: {  }
+currencyCode: GHS
+name: 'Ghanaian Cedi'
+numericCode: '936'
+symbol: GHS
+fractionDigits: 2

@@ -1,0 +1,33 @@
+uuid: 0ecf4adb-4234-412f-bed4-4edb0c857c91
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+  module:
+    - commerce_price
+id: commerce_product_variation.default.default
+targetEntityType: commerce_product_variation
+bundle: default
+mode: default
+content:
+  price:
+    label: hidden
+    type: commerce_price_default
+    weight: 1
+    region: content
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  product_id: true
+  sku: true

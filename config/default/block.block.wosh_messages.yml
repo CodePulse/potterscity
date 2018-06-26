@@ -1,0 +1,22 @@
+uuid: c8bc9316-dd24-471c-9c9a-b13bfbbcbc0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wosh
+_core:
+  default_config_hash: vylxMwun0ExEFquFgLIF5cDChyJvNQQVuTA_iNu8qSU
+id: wosh_messages
+theme: wosh
+region: content
+weight: -16
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

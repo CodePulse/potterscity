@@ -718,4 +718,4 @@ if (file_exists($app_root . '/' . $site_path . '/settings/settings.local.php')) 
 }
 
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_v7MHZZ37AxIurF5rSJ44hxfbRoqBmxSXj-169yM0CJUnLEoFaBXIF7M7uoBTzY0ib17P_SS7Pw/sync';
+$config_directories['sync'] = '../config/default';

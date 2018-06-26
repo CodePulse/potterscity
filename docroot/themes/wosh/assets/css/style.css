@@ -4680,3 +4680,15 @@ a.overlay:hover {
 .colored-bg .contextual-links a:not(.button) {
 	color: #555555 !important;
 }
+
+/*---------------------------------------------------*/
+/*    Custom properties added by Codepulse.co.uk
+/*---------------------------------------------------*/
+
+.pc-social a {
+	display: inline;
+}
+.pc-social a img {
+	height: 40px;
+	width: auto;
+}
