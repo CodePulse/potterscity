@@ -45,7 +45,9 @@ logo:
   use_default: false
   path: themes/wosh/assets/images/pfc-logo.png
 favicon:
-  use_default: true
+  use_default: false
+  path: themes/wosh/assets/images/pfc-logo.png
+  mimetype: image/png
 commerce_layout: commerce-layout1
 product_layout: product-layout1
 fixed_header: 0

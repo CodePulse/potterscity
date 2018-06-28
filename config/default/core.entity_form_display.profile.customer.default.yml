@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.profile.customer.address
-    - field.field.profile.customer.field_country
     - profile.type.customer
   enforced:
     module:
@@ -22,13 +21,7 @@ content:
     type: address_default
     weight: 1
     settings:
-      default_country: GB
+      default_country: GH
     third_party_settings: {  }
-    region: content
-  field_country:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: address_country_default
     region: content
 hidden: {  }

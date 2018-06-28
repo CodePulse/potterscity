@@ -1,0 +1,17 @@
+smtp_on: true
+smtp_host: smtp.mailgun.org
+smtp_hostbackup: ''
+smtp_port: '25'
+smtp_protocol: standard
+smtp_username: postmaster@mail.codepulse.co.uk
+smtp_password: 23ab033e24158e6e36eb1615e3ff4ad3
+smtp_from: yep@codepulse.co.uk
+smtp_fromname: 'Potters City'
+smtp_client_hostname: ''
+smtp_client_helo: ''
+smtp_allowhtml: '1'
+smtp_test_address: ''
+smtp_debugging: false
+prev_mail_system: php_mail
+_core:
+  default_config_hash: WEa5Ex_IeAcm6Bm0hmQ4vU_nDwJDB8hW-vxT1qpGIbM

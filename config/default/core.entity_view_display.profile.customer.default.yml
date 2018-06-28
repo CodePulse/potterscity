@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.profile.customer.address
-    - field.field.profile.customer.field_country
     - profile.type.customer
   enforced:
     module:
@@ -24,12 +23,5 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_country:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: address_country_default
     region: content
 hidden: {  }

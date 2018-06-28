@@ -1,0 +1,11 @@
+palette:
+  color: '#ea2b30'
+  bg: '#ffffff'
+  page_bg: '#ffffff'
+  text: '#555555'
+logo: 'public://color/wosh-75be31ac/logo.svg'
+stylesheets:
+  - 'public://color/wosh-75be31ac/colors.css'
+files:
+  - 'public://color/wosh-75be31ac/logo.svg'
+  - 'public://color/wosh-75be31ac/colors.css'

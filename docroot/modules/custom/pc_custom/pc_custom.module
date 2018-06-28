@@ -1,0 +1,11 @@
+<?php
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function pc_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//  $form['payment_information']['billing_information']['#available_countries'][] = 'FR';
+//  $form['payment_information']['billing_information']['#available_countries'][] = 'GB';
+}
+
