@@ -26,10 +26,10 @@ third_party_settings:
     block_padding_left: ''
     block_text_color: text-light
     block_bg_color: 1c161c
-    block_bg_image_path: themes/wosh/assets/images/bg/bg3.jpg
+    block_bg_image_path: themes/wosh/assets/images/bg/house-of-prayer.jpg
     block_bg_repeat: ''
     block_bg_position: ''
-    block_parallax_bg: ''
+    block_parallax_bg: parallax-bg
 id: about_cta
 theme: wosh
 region: content_wide
@@ -38,7 +38,7 @@ provider: null
 plugin: 'block_content:bf16384d-fb82-4c71-80ff-ec81db3b7058'
 settings:
   id: 'block_content:bf16384d-fb82-4c71-80ff-ec81db3b7058'
-  label: 'Ready to get started?'
+  label: 'Come to Potter''s City'
   provider: block_content
   label_display: visible
   status: true

@@ -1,14 +1,13 @@
-uuid: 0c6ce67b-52fa-4e13-8bfe-c4a80dbc0120
+uuid: f12967ee-20df-4bb9-90ed-0585036a8a13
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:e246b99b-a73a-45dc-8c31-bc1067e95114'
+    - 'block_content:basic:dd605757-56df-43b0-b9a6-936d4d3f6a2c'
   module:
     - block_content
     - block_visibility_groups
     - hsblock
-    - system
   theme:
     - wosh
 third_party_settings:
@@ -16,8 +15,8 @@ third_party_settings:
     block_layout: norm-width
     block_subtitle: ''
     block_title_style: block-title-1
-    block_title_align: ''
-    classes: ''
+    block_title_align: block-title-left
+    classes: pc-social
     id: ''
     block_padding_top: ''
     block_padding_right: ''
@@ -29,17 +28,17 @@ third_party_settings:
     block_bg_repeat: ''
     block_bg_position: ''
     block_parallax_bg: ''
-id: payment_method
+id: social
 theme: wosh
-region: footer_forth
-weight: -17
+region: footer_third
+weight: 0
 provider: null
-plugin: 'block_content:e246b99b-a73a-45dc-8c31-bc1067e95114'
+plugin: 'block_content:dd605757-56df-43b0-b9a6-936d4d3f6a2c'
 settings:
-  id: 'block_content:e246b99b-a73a-45dc-8c31-bc1067e95114'
-  label: 'Payment Method'
+  id: 'block_content:dd605757-56df-43b0-b9a6-936d4d3f6a2c'
+  label: Social
   provider: block_content
-  label_display: '0'
+  label_display: visible
   status: true
   info: ''
   view_mode: full
@@ -48,9 +47,4 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
-    context_mapping: {  }
-  request_path:
-    id: request_path
-    pages: "<front>\r\n/about"
-    negate: true
     context_mapping: {  }

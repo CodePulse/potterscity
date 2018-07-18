@@ -1,0 +1,10 @@
+uuid: 4ffaf373-cd14-4554-96fd-f464433671c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.footer_teaser
+label: 'Footer Teaser'
+targetEntityType: commerce_product
+cache: true

@@ -4692,3 +4692,12 @@ a.overlay:hover {
 	height: 40px;
 	width: auto;
 }
+.footer-product {
+	margin-bottom: 15px;
+}
+.footer-product img {
+	width: 110px;
+}
+.footer-product .field-title {
+	font-size: 15px;
+}
