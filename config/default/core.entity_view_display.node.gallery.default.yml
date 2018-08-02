@@ -1,0 +1,45 @@
+uuid: ab31a801-10ad-4091-a11e-98a922b0c014
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery.body
+    - field.field.node.gallery.field_images
+    - image.style.250x250
+    - node.type.gallery
+  module:
+    - colorbox
+    - text
+    - user
+id: node.gallery.default
+targetEntityType: node
+bundle: gallery
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_images:
+    weight: 102
+    label: hidden
+    settings:
+      colorbox_node_style: 250x250
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: page
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    type: colorbox
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -4708,3 +4708,12 @@ a.overlay:hover {
 .page-shop #page-title {
 	background-image: url(../images/shop/potters-shop-banner.jpg);
 }
+
+.pc-gallery-image-thumbnail {
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 32px;
+}
+.pc-gallery-image-thumbnail .colorbox {
+	cursor: pointer;
+}
