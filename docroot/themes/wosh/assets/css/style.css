@@ -4701,3 +4701,10 @@ a.overlay:hover {
 .footer-product .field-title {
 	font-size: 15px;
 }
+.page-shop #page-title ul,
+.page-shop #page-title h1 {
+	color: #fff;
+}
+.page-shop #page-title {
+	background-image: url(../images/shop/potters-shop-banner.jpg);
+}
