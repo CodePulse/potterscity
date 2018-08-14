@@ -1,0 +1,27 @@
+uuid: 661641e2-1dfa-4266-ba8b-5abb4c6a448a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file
+    - node.type.file
+  module:
+    - file
+id: node.file.field_file
+field_name: field_file
+entity_type: node
+bundle: file
+label: File
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: downloads
+  file_extensions: 'pdf doc docx ppt png jpg jpeg txt mp4 mp3 zip tgz tz xml xls'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

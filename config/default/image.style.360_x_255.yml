@@ -1,0 +1,14 @@
+uuid: 405c5ae7-44f4-4370-a370-71ce1d892b58
+langcode: en
+status: true
+dependencies: {  }
+name: 360_x_255
+label: '360 x 255'
+effects:
+  43b3a522-df55-4ea0-9b15-0d0f1797f202:
+    uuid: 43b3a522-df55-4ea0-9b15-0d0f1797f202
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 255

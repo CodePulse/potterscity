@@ -1,0 +1,12 @@
+{% for file in files %}
+  {% if file.image_path %}
+    <a href="{{ file.file_url }}" target="_blank">
+      <img src="{{ file.image_path }}">
+    </a>
+  {% else %}
+    <a href="{{ file.file_url }}" target="_blank">
+      <img src="{{ file.image_path }}">
+    </a>
+  {% endif %}
+{% endfor %}
+

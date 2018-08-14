@@ -1,0 +1,50 @@
+uuid: 6f1f098f-d539-4a8e-b0f3-de8bc9a0c54e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5e58b63a-e871-4c3e-b026-63431e45b5fa'
+  module:
+    - block_content
+    - block_visibility_groups
+    - hsblock
+  theme:
+    - wosh
+third_party_settings:
+  hsblock:
+    block_layout: norm-width
+    block_subtitle: ''
+    block_title_style: block-title-1
+    block_title_align: block-title-left
+    classes: ''
+    id: ''
+    block_padding_top: ''
+    block_padding_right: ''
+    block_padding_bottom: ''
+    block_padding_left: ''
+    block_text_color: ''
+    block_bg_color: ''
+    block_bg_image_path: ''
+    block_bg_repeat: ''
+    block_bg_position: ''
+    block_parallax_bg: ''
+id: sitemaintainedby
+theme: wosh
+region: footer_bottom_second
+weight: 0
+provider: null
+plugin: 'block_content:5e58b63a-e871-4c3e-b026-63431e45b5fa'
+settings:
+  id: 'block_content:5e58b63a-e871-4c3e-b026-63431e45b5fa'
+  label: 'Site maintained by'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

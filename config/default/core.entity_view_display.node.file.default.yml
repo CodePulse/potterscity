@@ -1,0 +1,38 @@
+uuid: 6853e22d-f6df-4c84-8fb3-22af2e784541
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.file.body
+    - field.field.node.file.field_file
+    - node.type.file
+  module:
+    - file
+    - text
+    - user
+id: node.file.default
+targetEntityType: node
+bundle: file
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_file:
+    weight: 102
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

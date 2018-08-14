@@ -446,3 +446,34 @@ function wosh_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormSta
 	);
 	
 }
+
+/**
+ * @param $variables
+ */
+function wosh_preprocess_field(&$variables){
+	$field_name = $variables['field_name'];
+	$items = $variables['items'];
+
+	if ($field_name == 'field_file' && !empty($items)) {
+		foreach ($items as $delta => $item) {
+			$images = [
+				'image/png',
+				'image/gif',
+				'image/jpg',
+				'image/jpeg',
+			];
+			$file = $item['content']['#file'];
+			$file_type = $file->getMimeType();
+			$variables['files'][$delta]['file_url'] = file_create_url($file->getFileUri());
+
+			if (in_array($file_type, $images)) {
+				$style = \Drupal::entityTypeManager()->getStorage('image_style')->load('360_x_255');
+				$variables['files'][$delta]['image_path'] = $style->buildUrl($file->getFileUri());
+			}
+			else {
+				// This file is not an image so display fallback image.
+				$variables['files'][$delta]['image_path'] = '/themes/wosh/assets/images/file-placeholder.png';
+			}
+		}
+	}
+}
