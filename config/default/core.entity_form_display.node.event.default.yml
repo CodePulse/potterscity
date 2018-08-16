@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_event_date
     - field.field.node.event.field_event_type
     - field.field.node.event.field_image
     - image.style.thumbnail
@@ -11,6 +12,7 @@ dependencies:
   module:
     - image
     - path
+    - single_datetime
     - text
 id: node.event.default
 targetEntityType: node
@@ -32,14 +34,27 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_event_date:
+    weight: 124
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      disable_days: {  }
+      exclude_date: ''
+      inline: false
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
+    third_party_settings: {  }
+    type: single_date_time_widget
+    region: content
   field_event_type:
     weight: 122
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
     region: content
   field_image:
     weight: 123
