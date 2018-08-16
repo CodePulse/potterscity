@@ -57,6 +57,7 @@
         "drupal/redirect": "^1.1",
         "drupal/search_api": "^1.9",
         "drupal/search_api_db": "^1.9",
+        "drupal/search_api_solr": "^2.1",
         "drupal/seckit": "^1.0@alpha",
         "drupal/simplenews": "^1.0@alpha",
         "drupal/single_datetime": "^1.6",
