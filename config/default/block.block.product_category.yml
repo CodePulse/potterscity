@@ -44,6 +44,7 @@ settings:
   label: Category
   provider: facets
   label_display: visible
+  block_id: product_category
 visibility:
   condition_group:
     id: condition_group

@@ -73,7 +73,7 @@ display:
           uses_fields: false
           lg: '4'
           md: '6'
-          sm: '12'
+          sm: '6'
           grid_item: 0
       row:
         type: search_api
